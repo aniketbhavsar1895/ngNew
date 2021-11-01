@@ -81,7 +81,7 @@
 </div>
 <div class="cls" id="div2"><h1>2</h1></div>
 <div class="cls" id="div3">
-  <h1 ngNonBindable appStyle>{{ title }}</h1>
+  <h1 appStyle>{{ title }}</h1>
   <div *ngFor="let product of products" class="card">
     <p>Product id: {{ product.id }}</p>
     <p>Product name: {{ product.name | uppercase }}</p>
