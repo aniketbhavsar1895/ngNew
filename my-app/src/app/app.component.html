@@ -82,6 +82,8 @@
 <div class="cls" id="div2"><h1>2</h1></div>
 <div class="cls" id="div3">
   <h1 appStyle>{{ title }}</h1>
+
+  <h2>We have {{ calcProd() }} products in stock</h2>
   <div
     *ngFor="let product of products"
     class="card"

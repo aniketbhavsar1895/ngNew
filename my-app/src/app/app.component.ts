@@ -29,11 +29,19 @@ export class AppComponent {
       id: 1003,
       name: 'BOOKS',
       price: 1800,
-      inStock: 10,
+      inStock: 30,
       textColor: 'blue',
       isNew: false,
     },
   ];
+
+  calcProd() {
+    let sum = 0;
+    for (let prod of this.products) {
+      sum = sum + prod.inStock;
+    }
+    return sum;
+  }
 }
 // app.component.ts end
 
