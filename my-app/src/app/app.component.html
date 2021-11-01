@@ -81,14 +81,25 @@
 </div>
 <div class="cls" id="div2"><h1>2</h1></div>
 <div class="cls" id="div3">
+  <h1 ngNonBindable appStyle>{{ title }}</h1>
   <div *ngFor="let product of products" class="card">
     <p>Product id: {{ product.id }}</p>
-    <p>Product name: {{ product.name }}</p>
-    <p>Product inStock: {{ product.inStock }}</p>
-    <p>Product price: {{ product.price }}</p>
+    <p>Product name: {{ product.name | uppercase }}</p>
+    <p *ngIf="product.inStock > 0; else abc">
+      Product inStock: {{ product.inStock }}
+    </p>
+
+    <p>
+      Product price: <s> {{ product.price | currency: "INR" }}</s>
+    </p>
+    <p>Product Offer: {{ product.price | offer | currency: "INR" }}</p>
   </div>
 </div>
 <div class="cls" id="div4"><h1>4</h1></div>
 <div class="cls" id="div5"><h1>5</h1></div>
 <div class="cls" id="div6"><h1>6</h1></div>
 <div class="cls" id="div7"><h1>7</h1></div>
+
+<ng-template #abc>
+  <p>Out Of STock</p>
+</ng-template>
