@@ -80,7 +80,14 @@
   </nav>
 </div>
 <div class="cls" id="div2"><h1>2</h1></div>
-<div class="cls" id="div3"><h1>3</h1></div>
+<div class="cls" id="div3">
+  <div *ngFor="let product of products" class="card">
+    <p>Product id: {{ product.id }}</p>
+    <p>Product name: {{ product.name }}</p>
+    <p>Product inStock: {{ product.inStock }}</p>
+    <p>Product price: {{ product.price }}</p>
+  </div>
+</div>
 <div class="cls" id="div4"><h1>4</h1></div>
 <div class="cls" id="div5"><h1>5</h1></div>
 <div class="cls" id="div6"><h1>6</h1></div>

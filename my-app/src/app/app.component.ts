@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hello Angular';
-  products = ['Mobiles', 'Laptops', 'Books'];
+  products = [
+    { id: 1001, name: 'Mobile', price: 1200, inStock: 80 },
+    { id: 1002, name: 'Laptop', price: 1500, inStock: 20 },
+    { id: 1003, name: 'Books', price: 1800, inStock: 10 },
+  ];
 }
 // app.component.ts end
 
