@@ -82,9 +82,15 @@
 <div class="cls" id="div2"><h1>2</h1></div>
 <div class="cls" id="div3">
   <h1 appStyle>{{ title }}</h1>
-  <div *ngFor="let product of products" class="card">
+  <div
+    *ngFor="let product of products"
+    class="card"
+    [class.newProd]="product.isNew"
+  >
     <p>Product id: {{ product.id }}</p>
-    <p>Product name: {{ product.name | uppercase }}</p>
+    <p [style.color]="product.textColor">
+      Product name: {{ product.name | uppercase }}
+    </p>
     <p *ngIf="product.inStock > 0; else abc">
       Product inStock: {{ product.inStock }}
     </p>
