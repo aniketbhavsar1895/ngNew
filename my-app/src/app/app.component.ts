@@ -1,4 +1,7 @@
+import { PRODUCTS } from './data/products-data';
 import { Component } from '@angular/core';
+
+import { Products } from './model/products';
 
 // app.component.ts start
 @Component({
@@ -7,36 +10,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Hello Angular';
-  products = [
-    {
-      id: 1001,
-      name: 'mobile',
-      price: 1200,
-      inStock: 80,
-      textColor: 'red',
-      isNew: false,
-    },
-    {
-      id: 1002,
-      name: 'Laptop',
-      price: 1500,
-      inStock: 0,
-      textColor: 'green',
-      isNew: true,
-    },
-    {
-      id: 1003,
-      name: 'BOOKS',
-      price: 1800,
-      inStock: 30,
-      textColor: 'blue',
-      isNew: false,
-    },
-  ];
+  title: string = 'Hello Angular';
+  products: Products[] = PRODUCTS;
 
   calcProd() {
-    let sum = 0;
+    let sum: any = 0;
     for (let prod of this.products) {
       sum = sum + prod.inStock;
     }
